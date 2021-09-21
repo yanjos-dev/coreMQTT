@@ -1,0 +1,24 @@
+### CMSIS Pack manifest file ###
+
+build:
+  - name: mqtt_cmsis_build
+    options: "cmake -G Ninja"
+
+packs:
+  ################ coreMQTT Pack #################
+  - name: "coreMQTT"
+    description: "Client implementation of the MQTT 3.1.1 specification for embedded devices."
+    vendor: "AWS"
+    license: "../../LICENSE"
+    url: "https://github.com/FreeRTOS/coreMQTT/tree/v1.1.0/"
+    output: "build"
+    releases:
+      - version: "1.1.0"
+        date: "2020-12-15"
+        description: "Based on the https://github.com/FreeRTOS/coreMQTT/tree/v1.1.0/ repository"
+
+    components:
+      - name: core_mqtt_library
+        target: core_mqtt_library
+        attributes: {Cclass: "FreeRTOS", Cgroup: "coreMQTT", Cversion: "1.1.0"}
+        description: "Client implementation of the MQTT 3.1.1 specification for embedded devices."
